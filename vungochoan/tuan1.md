@@ -194,25 +194,25 @@ Systemctl là công cụ chính dùng để kiểm soát trạng thái của h�
 *Một số ví dụ về sử dụng cơ bản*
 
 - Liệt kê tất cả các dịch vụ đang chạy:  
-`$ Systemctl`
+`Systemctl`
 
 - Kích hoạt dịch vụ "example1" ngay lập tức:  
-`# Systemctl start example1`
+`Systemctl start example1`
 
 - Hủy kích hoạt dịch vụ "example1" ngay lập tức:  
-`# Systemctl stop example1`
+`#Systemctl stop example1`
 
 - Khởi động lại dịch vụ "example1" ngay lập tức:  
-`# Systemctl restart example1`
+`Systemctl restart example1`
 
 - Hiển thị tình trạng của dịch vụ "example1":  
-`# Systemctl status example1`
+`Systemctl status example1`
 
 - Cho phép "example1" khởi động khi khởi động:  
-`# Systemctl enable example1`
+`Systemctl enable example1`
 
 - Tắt "example1" để không bật trong quá trình khởi động:  
-`# Systemctl disable example1`
+`Systemctl disable example1`
 
 # Git
 Version control system là một hệ thống lưu trữ các thay đổi của một tập tin (file) hoặc tập hợp các tập tin theo thời gian, do đó nó giúp bạn có thể quay lại một phiên bản xác định nào đó sau này. Nó cho phép bạn: khôi phục lại phiên bản cũ của các file, khôi phục lại phiên bản cũ của toàn bộ dự án, xem lại các thay đổi đã được thực hiện theo thời gian, xem ai là người thực hiện thay đổi cuối cùng có thể gây ra sự cố,...
@@ -308,7 +308,7 @@ Sau khi merge, Pull request yêu cầu giữ lại bản ghi về lịch sử th
 ### Compare to SVN
 Với Subversion, có một vấn đề: Kho SVN có thể ở một vị trí không thể kết nối(không có internet), bạn không thể commit. Nếu bạn muốn tạo một bản sao code của mình, bạn phải sao chép / dán nó theo nghĩa đen.
 
-Với Git thì không có vấn đề trên. Bản sao cục bộ của bạn là kho lưu trữ, và bạn có thể commit. Khi có kết nối với kho chính, bạn có thể commit chống lại nó.
+Với Git thì không có vấn đề trên. Bản sao cục bộ của bạn là kho lưu trữ, và bạn có thể commit. Khi có kết nối với kho chính, bạn có thể commit lại.
 
 Git phức tạp, khó học hơn SVN
 
@@ -316,4 +316,4 @@ Git nhanh hơn so với SVN
 
 Git kiểm soát tốt hơn việc phân chia và hợp nhất
 
-Các branch của git có trọng lượng nhẹ và hợp nhất dễ dàng
+Các branch của git nhẹ và hợp nhất dễ dàng
