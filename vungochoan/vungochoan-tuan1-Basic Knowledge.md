@@ -1,22 +1,22 @@
 # Linux
-### Installation
-##### Chuẩn bị trước khi cài
+## Installation
+### Chuẩn bị trước khi cài
 - USB
 - File .iso cài đặt Ubuntu
 - Phần mềm USB Installer
 
-##### Cài đặt
+### Cài đặt
 - Boot hệ thống
 - Phân chia ổ đĩa
 - Cấu hình hệ thống
 - Tạo tài khoản sử dụng
 
-##### Các kiểu file system
+### Các kiểu file system
 Linux cần ít nhất 2 bảng partition. Một dành cho các tệp của HĐH, bảng còn lại dùng cho vùng nhớ swap
 
 Có khá nhiều dạng file hệ thống trong Linux như ext2, ext3, ext4,... Hiện tại trong Linux phổ biến hai kiểu hệ thống file là ext3 và ext4.
 
-### Filesystem Hierarchy Standard
+## Filesystem Hierarchy Standard
 1. /root  
 Thư mục gốc của toàn bộ hệ thống phân cấp.
 2. /bin  
@@ -58,7 +58,8 @@ Chứa các file binary, library, tài liệu, source-code cho các chương tr�
 - /usr/src: Source code
 19. /var  
 Chứa đựng các file có sự thay đổi trong quá trình hoạt động của hệ điều hành
-### Bash shell (basic)
+
+## Bash shell (basic)
 - Biến: `ten_bien=gia_tri`  
 In gía trị của biến: `echo $ten_bien`
 - Phép tính toán số học: `expr bieu_thuc_so_hoc`  
@@ -148,7 +149,7 @@ Tất cả các ký tự trong dấu ngoặc kép đều không có ý nghĩa t�
     B "function B"
     ```
 
-### Init system(i.e. systemd)
+## Init system(i.e. systemd)
 Init process là một tiến trình được khởi động lên đầu tiên trong hệ thống Linux. Tức là sau khi chọn hệ điều hành trong menu của Boot Loader. Hệ điều hành bắt đầu được khởi động và tiến trình đầu tiên khởi động lên là init. Nhiệm vụ của init là start và stop các process, services… cần thiết khác.
 
 Vì init là tiến trình được khởi động đầu tiên của hệ thống Linux nên:  
@@ -160,12 +161,12 @@ Có ba kiểu triển khai init system chính trong hệ thống Linux là:
 - Upstart: Được phát triển bởi Canonical vào khoảng năm 2009 và sử dụng trong các phiên bản Ubuntu cũ hơn bản 15.04.
 - Systemd: Là một init system được phát triển khoảng năm 2010 và được nhiều Linux distributions sử dụng để thay thế các init system cũ. Ubuntu từ phiên bản 15.04 và Centos từ phiên bản 7 đã sử dụng systemd làm init system mặc định.
 
-##### purpose
+### Purpose
 - Thay thế các hệ thống init cũ
 - Quản lý dịch vụ cho Linux
 
-##### basic usage
-###### Cài đặt
+### Basic usage
+#### Cài đặt
 - Để cài đặt hệ thống chạy lệnh:  
     ```
     apt-get update  
@@ -188,7 +189,7 @@ Có ba kiểu triển khai init system chính trong hệ thống Linux là:
 Để khởi động hệ thống mới được cài đặt, chạy lệnh  
 `reboot`
 
-###### Quản lý dịch vụ với systemd
+#### Quản lý dịch vụ với systemd
 Systemctl là công cụ chính dùng để kiểm soát trạng thái của hệ thống "systemd" và quản lý dịch vụ
 
 *Một số ví dụ về sử dụng cơ bản*
@@ -218,7 +219,7 @@ Systemctl là công cụ chính dùng để kiểm soát trạng thái của h�
 Version control system là một hệ thống lưu trữ các thay đổi của một tập tin (file) hoặc tập hợp các tập tin theo thời gian, do đó nó giúp bạn có thể quay lại một phiên bản xác định nào đó sau này. Nó cho phép bạn: khôi phục lại phiên bản cũ của các file, khôi phục lại phiên bản cũ của toàn bộ dự án, xem lại các thay đổi đã được thực hiện theo thời gian, xem ai là người thực hiện thay đổi cuối cùng có thể gây ra sự cố,...
 
 
-### History of Version control system
+## History of Version control system
 - stand-alone and file-focused
     - SCCS: 1972, Unix only
     - RCS: 1982, cross-platform, text only
@@ -231,8 +232,8 @@ Version control system là một hệ thống lưu trữ các thay đổi của 
     - Git: 2005, created by Linus Torvalds after BitKeeper went commercial only. Broadly used in conjunction with GitHub, which offer free hosting for open-source projects
     - Mercurial: 2005, also created in response to BitKeeper change
 
-### Basic Git command and workflow
-##### Basic Git command
+## Basic Git command and workflow
+### Basic Git command
 - git init: Tạo một repository mới
 
     Lệnh: `git init`
@@ -278,7 +279,7 @@ Version control system là một hệ thống lưu trữ các thay đổi của 
 
     Lệnh: `git tag -a tên_tag -m "ghi_chú"`
 
-##### Workflow
+### Workflow
 **Create a branch**
 
 Khi bạn tạo một branch trong project của mình, bạn đang tạo ra một môi trường mới. Những thay đổi bạn thực hiện trên branch không ảnh hưởng đến master branch
