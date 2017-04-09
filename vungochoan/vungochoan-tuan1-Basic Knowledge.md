@@ -17,46 +17,46 @@ Linux cần ít nhất 2 bảng partition. Một dành cho các tệp của HĐH
 Có khá nhiều dạng file hệ thống trong Linux như ext2, ext3, ext4,... Hiện tại trong Linux phổ biến hai kiểu hệ thống file là ext3 và ext4.
 
 ### Filesystem Hierarchy Standard
-1. /root
+1. /root  
 Thư mục gốc của toàn bộ hệ thống phân cấp.
-2. /bin
+2. /bin  
 Chứa file thực thi dạng binary. Các câu lệnh được sử dụng bởi tất cả các user trong hệ thống sẽ được đặt trong đây
-3. /boot
+3. /boot  
 Chứa các file boot loader , ví dụ: hạt nhân, initrd.
-4. /dev
+4. /dev  
 Chứa các file device để đại diện các hardware. Ví dụ: /dev/sda
-5. /etc
+5. /etc  
 Thông thường ở /etc sẽ chứa file cấu hình cho các chương trình hoạt động. Ví dụ: /etc/network dùng để quản lý dịch vụ network
-6. /home
+6. /home  
 Chứa đựng thông tin cá nhân của các user
-7. /lib
+7. /lib  
 Thư viện cần thiết cho các chương trình nhị phân trong /bin/và /sbin/
-8. /media
+8. /media  
 Chứa thư mục dùng để mount cho các thiết bị removable. Ví dụ như CDROM, Floppy...
-9. /mnt
+9. /mnt  
 Chứa các thư mục dùng để system admin thực hiện quá trình mount
-10. /opt
+10. /opt  
 Chứa đựng các gói phần mềm tùy chọn
-11. /proc
+11. /proc  
 Chứa đựng thông tin về quá trình xử lý của hệ thống, thông tin về các process đang chạy, thông tin tài nguyên hệ thống
-12. /root
+12. /root  
 Thư mục home của user root
-13. /run
+13. /run  
 Thông tin về hệ thống đang chạy kể từ lần khởi động cuối
-14. /sbin
+14. /sbin  
 Chứa đựng các file thực thi dạng binary. Các lệnh bên trong /sbin thường được sử dụng bởi system administrator và dùng cho các mục đích là duy trì quản trị hệ thống.
-15. /srv
+15. /srv  
 Chứa đựng các dịch vụ cho server, nó liên quan đến dữ liệu
-16. /sys
+16. /sys  
 Chứa thông tin về các thiết bị kết nối với máy tính.
-17. /tmp
+17. /tmp  
 Thư mục này chứa các file được tạo ra bởi hệ thống và user.
-18. /usr
+18. /usr  
 Chứa các file binary, library, tài liệu, source-code cho các chương trình
 - /usr/include: Tiêu chuẩn bao gồm tệp
 - /usr/lib: Thư viện cho các chương trình nhị phân trong /usr/bin/và /usr/sbin/
 - /usr/src: Source code
-19. /var:
+19. /var  
 Chứa đựng các file có sự thay đổi trong quá trình hoạt động của hệ điều hành
 ### Bash shell (basic)
 - Biến: `ten_bien=gia_tri`  
@@ -168,7 +168,7 @@ Có ba kiểu triển khai init system chính trong hệ thống Linux là:
 ###### Cài đặt
 - Để cài đặt hệ thống chạy lệnh:
     ```
-    apt-get update
+    apt-get update  
     apt-get install systemd
     ```
 
