@@ -172,7 +172,7 @@ Có ba kiểu triển khai init system chính trong hệ thống Linux là:
     apt-get install systemd
     ```
 
-    Cài đặt này sẽ cài đặt gói systemd nhưng sẽ không cấu hình systemd lên hệ thống init.
+        Cài đặt này sẽ cài đặt gói systemd nhưng sẽ không cấu hình systemd lên hệ thống init.
 
 - Cấu hình để kiểm tra
     Để kiểm tra systemd trước khi chuyển sang mặc định, bạn có thể thêm tham số khởi động sau vào kernel:
@@ -246,7 +246,7 @@ Version control system là một hệ thống lưu trữ các thay đổi của 
     Lệnh: `git branch` 
 
         ```
-        Tạo nhánh mới: `git branch tên_nhánh`     
+        Tạo nhánh mới: `git branch tên_nhánh`  
         Xóa nhánh: `git branch -d tên_nhánh`
         ```
 
