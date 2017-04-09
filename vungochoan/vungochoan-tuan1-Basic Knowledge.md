@@ -166,13 +166,13 @@ Có ba kiểu triển khai init system chính trong hệ thống Linux là:
 
 ##### basic usage
 ###### Cài đặt
-- Để cài đặt hệ thống chạy lệnh:
+- Để cài đặt hệ thống chạy lệnh:  
     ```
     apt-get update  
     apt-get install systemd
     ```
 
-        Cài đặt này sẽ cài đặt gói systemd nhưng sẽ không cấu hình systemd lên hệ thống init.
+    Cài đặt này sẽ cài đặt gói systemd nhưng sẽ không cấu hình systemd lên hệ thống init.
 
 - Cấu hình để kiểm tra
     Để kiểm tra systemd trước khi chuyển sang mặc định, bạn có thể thêm tham số khởi động sau vào kernel:
