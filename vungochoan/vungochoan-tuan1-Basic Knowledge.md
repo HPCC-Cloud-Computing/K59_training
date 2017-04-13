@@ -35,15 +35,9 @@ Thư viện cần thiết cho các chương trình nhị phân trong /bin/và /s
 Chứa thư mục dùng để mount cho các thiết bị removable. Ví dụ như CDROM, Floppy...
 9. /mnt  
 Chứa các thư mục dùng để system admin thực hiện quá trình mount
-<<<<<<< HEAD:vungochoan/vungochoan-tuan1-Basic Knowledge.md
-10. /opt
-Chứa đựng các gói phần mềm tùy chọn
-11. /proc
-=======
 10. /opt  
 Chứa đựng các gói phần mềm tùy chọn
 11. /proc  
->>>>>>> 76469d4b5275b4876d61de46f2a8b0ef634a36be:vungochoan/vungochoan-tuan1-Basic Knowledge.md
 Chứa đựng thông tin về quá trình xử lý của hệ thống, thông tin về các process đang chạy, thông tin tài nguyên hệ thống
 12. /root  
 Thư mục home của user root
@@ -65,11 +59,7 @@ Chứa các file binary, library, tài liệu, source-code cho các chương tr�
 19. /var  
 Chứa đựng các file có sự thay đổi trong quá trình hoạt động của hệ điều hành
 
-<<<<<<< HEAD:vungochoan/vungochoan-tuan1-Basic Knowledge.md
-### Bash shell (basic)
-=======
 ## Bash shell (basic)
->>>>>>> 76469d4b5275b4876d61de46f2a8b0ef634a36be:vungochoan/vungochoan-tuan1-Basic Knowledge.md
 - Biến: `ten_bien=gia_tri`  
 In gía trị của biến: `echo $ten_bien`
 - Phép tính toán số học: `expr bieu_thuc_so_hoc`  
@@ -179,13 +169,10 @@ Có ba kiểu triển khai init system chính trong hệ thống Linux là:
 #### Cài đặt
 - Để cài đặt hệ thống chạy lệnh:  
     ```
-<<<<<<< HEAD:vungochoan/vungochoan-tuan1-Basic Knowledge.md
-    apt-get update
-    apt-get install systemd
-=======
+    
     apt-get update  
     apt-get install systemd
->>>>>>> 76469d4b5275b4876d61de46f2a8b0ef634a36be:vungochoan/vungochoan-tuan1-Basic Knowledge.md
+
     ```
 
     Cài đặt này sẽ cài đặt gói systemd nhưng sẽ không cấu hình systemd lên hệ thống init.
@@ -224,11 +211,7 @@ Systemctl là công cụ chính dùng để kiểm soát trạng thái của h�
 - Hiển thị tình trạng của dịch vụ "example1":  
 `systemctl status example1`
 
-<<<<<<< HEAD:vungochoan/vungochoan-tuan1-Basic Knowledge.md
 - Cho phép "example1" khởi động trong quá trình khởi động:  
-=======
-- Cho phép "example1" khởi động khi khởi động:  
->>>>>>> 76469d4b5275b4876d61de46f2a8b0ef634a36be:vungochoan/vungochoan-tuan1-Basic Knowledge.md
 `systemctl enable example1`
 
 - Tắt "example1" để không bật trong quá trình khởi động:  
@@ -273,6 +256,7 @@ Version control system là một hệ thống lưu trữ các thay đổi của 
 - git checkout: Chuyển nhánh
 
     Lệnh: `git checkout tên_nhánh`
+
 
 - git add: Cập nhật tình trạng các file(thêm, sửa, xóa) trong project
 
