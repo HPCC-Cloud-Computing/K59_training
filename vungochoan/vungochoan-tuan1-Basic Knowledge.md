@@ -36,7 +36,7 @@ Chứa thư mục dùng để mount cho các thiết bị removable. Ví dụ nh
 9. /mnt
 Chứa các thư mục dùng để system admin thực hiện quá trình mount
 10. /opt
-Chứa đựng các gòi phần mềm tùy chọn
+Chứa đựng các gói phần mềm tùy chọn
 11. /proc
 Chứa đựng thông tin về quá trình xử lý của hệ thống, thông tin về các process đang chạy, thông tin tài nguyên hệ thống
 12. /root
@@ -58,6 +58,7 @@ Chứa các file binary, library, tài liệu, source-code cho các chương tr�
 - /usr/src: Source code
 19. /var:
 Chứa đựng các file có sự thay đổi trong quá trình hoạt động của hệ điều hành
+
 ### Bash shell (basic)
 - Biến: `ten_bien=gia_tri`  
 In gía trị của biến: `echo $ten_bien`
@@ -156,7 +157,7 @@ Vì init là tiến trình được khởi động đầu tiên của hệ thố
 - Tiến trình init là tiến trình cha của các tiến trình khác.
 
 Có ba kiểu triển khai init system chính trong hệ thống Linux là:
-- System V (đọc là System Five – V là số 5 la mã đó): là phiên bản truyền thống của init system trên nhiều hệ thống Linux.
+- System V: là phiên bản truyền thống của init system trên nhiều hệ thống Linux.
 - Upstart: Được phát triển bởi Canonical vào khoảng năm 2009 và sử dụng trong các phiên bản Ubuntu cũ hơn bản 15.04.
 - Systemd: Là một init system được phát triển khoảng năm 2010 và được nhiều Linux distributions sử dụng để thay thế các init system cũ. Ubuntu từ phiên bản 15.04 và Centos từ phiên bản 7 đã sử dụng systemd làm init system mặc định.
 
@@ -168,8 +169,8 @@ Có ba kiểu triển khai init system chính trong hệ thống Linux là:
 ###### Cài đặt
 - Để cài đặt hệ thống chạy lệnh:
     ```
-    Apt-get update
-    Apt-get install systemd
+    apt-get update
+    apt-get install systemd
     ```
 
     Cài đặt này sẽ cài đặt gói systemd nhưng sẽ không cấu hình systemd lên hệ thống init.
@@ -184,9 +185,9 @@ Có ba kiểu triển khai init system chính trong hệ thống Linux là:
 
 - Cấu hình mặc định
 Để sử dụng systemd nên cài đặt systemd-sysv  
-`# Apt-get install systemd-sysv`
+`apt-get install systemd-sysv`
 Để khởi động hệ thống mới được cài đặt, chạy lệnh  
-`# reboot`
+`reboot`
 
 ###### Quản lý dịch vụ với systemd
 Systemctl là công cụ chính dùng để kiểm soát trạng thái của hệ thống "systemd" và quản lý dịch vụ
@@ -194,25 +195,25 @@ Systemctl là công cụ chính dùng để kiểm soát trạng thái của h�
 *Một số ví dụ về sử dụng cơ bản*
 
 - Liệt kê tất cả các dịch vụ đang chạy:  
-`Systemctl`
+`systemctl`
 
 - Kích hoạt dịch vụ "example1" ngay lập tức:  
-`Systemctl start example1`
+`systemctl start example1`
 
 - Hủy kích hoạt dịch vụ "example1" ngay lập tức:  
-`#Systemctl stop example1`
+`systemctl stop example1`
 
 - Khởi động lại dịch vụ "example1" ngay lập tức:  
-`Systemctl restart example1`
+`systemctl restart example1`
 
 - Hiển thị tình trạng của dịch vụ "example1":  
-`Systemctl status example1`
+`systemctl status example1`
 
-- Cho phép "example1" khởi động khi khởi động:  
-`Systemctl enable example1`
+- Cho phép "example1" khởi động trong quá trình khởi động:  
+`systemctl enable example1`
 
 - Tắt "example1" để không bật trong quá trình khởi động:  
-`Systemctl disable example1`
+`systemctl disable example1`
 
 # Git
 Version control system là một hệ thống lưu trữ các thay đổi của một tập tin (file) hoặc tập hợp các tập tin theo thời gian, do đó nó giúp bạn có thể quay lại một phiên bản xác định nào đó sau này. Nó cho phép bạn: khôi phục lại phiên bản cũ của các file, khôi phục lại phiên bản cũ của toàn bộ dự án, xem lại các thay đổi đã được thực hiện theo thời gian, xem ai là người thực hiện thay đổi cuối cùng có thể gây ra sự cố,...
@@ -254,7 +255,7 @@ Version control system là một hệ thống lưu trữ các thay đổi của 
 
     Lệnh: `git checkout tên_nhánh`
 
-- git add: Cập nhật tình trạng các file(thêm, sửa, xóa) trong projects
+- git add: Cập nhật tình trạng các file(thêm, sửa, xóa) trong project
 
     Lệnh: `git add tên_file`
 
