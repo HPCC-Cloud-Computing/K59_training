@@ -11,7 +11,7 @@
     * Độ an toàn cao hơn Cloud computing do các dữ liệu được gửi giữa Fog và Cloud được mã hóa
     * Tiêu thụ lượng băng thông ít hơn
     * Loại bỏ được hiện tượng thắt cổ chai bottle-neck do dữ liệu không cần truyền tới chỉ một kho dữ liệu
-    * Loại bỏ được a point of failure (một thành phần quan trọng mà khi nó bị lỗi ảnh hưởng tới hoạt động của cả hệ thống).
+    * Loại bỏ được single point of failure (một thành phần quan trọng mà khi nó bị lỗi ảnh hưởng tới hoạt động của cả hệ thống).
  
 * Nhược điểm của Fog Computing: 
     * Do việc xử lý dữ liệu được thực hiện local nên cần thiết bị phần cứng để xử lý, dẫn đến việc dư thừa tài nguyên so với tính chất pay-as-you-go trong cloud computing
