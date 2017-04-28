@@ -2,22 +2,22 @@
 [Link cài đặt](https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository)
 
 # Phân biệt các lệnh
-**docker run**
+**docker run**  
 Tạo mới một container và chạy lệnh.  
 Lệnh: `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`  
 Các option ([option](https://docs.docker.com/engine/reference/commandline/run/#options)).
 
-**docker start**
+**docker start**  
 Chạy một hay nhiều container đang bị dừng.  
 Lệnh: `docker start [OPTIONS] CONTAINER [CONTAINER...]`  
 Các option ([option](https://docs.docker.com/engine/reference/commandline/start/#options)).
 
-**docker stop**
+**docker stop**  
 Dừng lại một hay nhiều container đang chạy.  
 Lệnh: `docker stop [OPTIONS] CONTAINER [CONTAINER...]`  
 Các option ([option](https://docs.docker.com/engine/reference/commandline/stop/#options)).
 
-**docker rm**
+**docker rm**  
 Xóa một hay nhiều container.  
 Lệnh: `docker rm [OPTIONS] CONTAINER [CONTAINER...]`  
 Các option ([option](https://docs.docker.com/engine/reference/commandline/rm/#options)).
