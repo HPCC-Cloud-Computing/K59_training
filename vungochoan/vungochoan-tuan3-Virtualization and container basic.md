@@ -39,26 +39,7 @@ Phân loại hypervisor:
 ![](https://upload.wikimedia.org/wikipedia/commons/e/e1/Hyperviseur.png)
 
 ### OS-level
-OS-level là một phương pháp ảo hóa server, nơi mà nhân (kernel) của hệ điều hành cho phép nhiều đối tượng không gian người dùng được cách ly dựa trên một hệ điều hành có sẵn, hay nói cách khác là tạo và chạy được nhiều máy ảo cách ly và an toàn dùng chung 1 hệ điều hành. Ngoài các cơ chế cách ly, kernel thường cung cấp các tính năng quản lý tài nguyên để hạn chế tác động của các hoạt động của một container đối với container khác.
-
-### Desktop virtualization
-Một máy chủ trung tâm tạo ra nhiều Desktop ảo cho nhiều người dùng. Họ có thể làm việc từ xa, dùng một máy tính khác hoặc các thiết bị di động để truy cập vào Desktop ảo và làm việc. Tất cả dữ liệu sẽ được xử lý và lưu trữ từ xa ngay trên máy chủ trung tâm. Ngoài ra, cách tiếp cận này hỗ trợ khôi phục dữ liệu hoàn thiện hơn vì tất cả các thành phần được lưu trữ chủ yếu trong trung tâm dữ liệu và được sao lưu thông qua các hệ thống bảo trì dự phòng.
-
-![](https://img.quantrimang.com/PHOTOS/IMAGE/042011/11/Virtualization.jpg)
-
-### Application virtualization
-Ảo hóa ứng dụng là một dạng công nghệ ảo hóa cho phép ta tách rời mối liên kết giữa ứng dụng và hệ điều hành, phân phối lại ứng dụng phù hợp với nhu cầu của người sử dụng. Ví dụ ảo hóa ứng dụng tạo ra các lớp tương thích hỗ trợ người dùng chạy các phần mềm Windows trên Linux.
-
-Hiện nay có khá nhiều chương trình ảo hóa ứng dụng như Citrix XenApp, VMware ThinApp, Microsoft App-V,...
-
-### Network virtualization
-Ảo hóa mạng là quá trình kết hợp tài nguyên, thiết bị mạng cả phần cứng lẫn phần mềm thành một hệ thống mạng ảo. Sau đó các tài nguyên này sẽ được phân chia thành các kênh và gắn với một máy chủ hoặc một thiết bị nào đó. Ảo hóa được phân thành 2 loại là ảo hóa bên ngoài và ảo hóa nội bộ.
-
-Các thành phần của một mạng ảo:
-- Mạng phần cứng, chẳng hạn như thiết bị chuyển mạch và card mạng
-- Networks, như các mạng LAN ảo (VLAN) và container như các máy ảo (VM) và Solaris Containers
-- Thiết bị lưu trữ mạng
-- Mạng lưới truyền thông, như Ethernet
+OS-level là một phương pháp ảo hóa server, nơi mà nhân (kernel) của hệ điều hành cho phép tạo và chạy được nhiều container cách ly và an toàn dùng chung 1 hệ điều hành. Ngoài các cơ chế cách ly, kernel thường cung cấp các tính năng quản lý tài nguyên để hạn chế tác động của các hoạt động của một container đối với container khác.
 
 # 2. Virtual machine
 ## Khái niệm
@@ -85,7 +66,7 @@ KVM là một công nghệ ảo hóa mới cho phép ảo hóa toàn phần trê
 ## Định nghĩa
 Docker là là một công cụ được thiết kế để tạo, vẩn chuyển và chạy một ứng dụng bất kì vào trong các container.
 
-Các container cho phép developer đóng gói một ứng dụng với tất cả các bộ phận cần thiết như: code, thời gian chạy, các công cụ hệ thống, thư viện hệ thống. Bằng cách đó, developer có thể yên tâm rằng ứng dụng sẽ chạy trên bất kỳ máy Linux nào, cho dù các thiết lập tùy chỉnh có thể khác với máy dùng để viết và kiểm thử code.
+Các container cho phép developer đóng gói môi trường chạy của ứng dụng. Bằng cách đó, developer có thể yên tâm rằng ứng dụng sẽ chạy trên bất kỳ máy Linux nào.
 
 ## Sự khác biệt giữa Docker và VM
 Có thể chạy nhiều máy ảo trên một máy thực nhưng mỗi máy ảo phải tạo ra một hệ điều hành riêng, tài nguyên hệ thống riêng để chạy. Docker cho phép nhiều container có thể chạy trên cùng một máy, sử dụng chung một hệ điều hành và dùng chung tài nguyên.
