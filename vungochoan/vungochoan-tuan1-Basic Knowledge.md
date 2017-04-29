@@ -169,10 +169,8 @@ Có ba kiểu triển khai init system chính trong hệ thống Linux là:
 #### Cài đặt
 - Để cài đặt hệ thống chạy lệnh:  
     ```
-    
     apt-get update  
     apt-get install systemd
-
     ```
 
     Cài đặt này sẽ cài đặt gói systemd nhưng sẽ không cấu hình systemd lên hệ thống init.
@@ -211,7 +209,7 @@ Systemctl là công cụ chính dùng để kiểm soát trạng thái của h�
 - Hiển thị tình trạng của dịch vụ "example1":  
 `systemctl status example1`
 
-- Cho phép "example1" khởi động trong quá trình khởi động:  
+- Cho phép "example1" khởi động khi khởi động:  
 `systemctl enable example1`
 
 - Tắt "example1" để không bật trong quá trình khởi động:  
@@ -257,8 +255,7 @@ Version control system là một hệ thống lưu trữ các thay đổi của 
 
     Lệnh: `git checkout tên_nhánh`
 
-
-- git add: Cập nhật tình trạng các file(thêm, sửa, xóa) trong project
+- git add: Cập nhật tình trạng các file(thêm, sửa, xóa) trong projects
 
     Lệnh: `git add tên_file`
 
