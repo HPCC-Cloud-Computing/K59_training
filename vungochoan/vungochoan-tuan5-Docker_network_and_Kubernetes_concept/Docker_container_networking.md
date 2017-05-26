@@ -11,7 +11,7 @@ cb0cdc4270b2        host                host                local
 
 Ba network này được tích hợp vào trong Docker. Khi chạy một container, bạn có thể sử dụng `--network` để chỉ định network mà container kết nối vào.
 
-`bridge` network đại diện cho `docker0` network có trong tất cả các cài đặt Docker. Trừ khi bạn chọn network khác `docker run --network=<NETWORK>`, Docker daemon kết nối các container vào network này theo mặc định.
+`bridge` network đại diện cho `docker0` network có trong tất cả các cài đặt Docker. Trừ khi bạn chọn network khác để kết nối `docker run --network=<NETWORK>`, nếu không Docker daemon sẽ kết nối các container vào network này theo mặc định.
 
 `none` và `host` network không được cấu hình trực tiếp trong Docker. Tuy nhiên, bạn có thể cấu hình default `bridge` network, cũng như user-defined bridge networks.
 
@@ -30,7 +30,7 @@ $ docker run -itd --name=container2 busybox
 94447ca479852d29aeddca75c28f7104df3c3196d7b6d83061879e339946805c
 ```
 
-Các container kết nối default `bridge` network có thể giao tiếp với nhau bằng địa chỉ IP. Docker không hỗ trợ tìm service tự động trên default `bridge` network. Nếu bạn muốn các container có thể phân giải địa chỉ IP theo tên container, bạn nên sử dụng user-defined networks. Bạn có thể liên kết 2 container lại với nhau sử dụng tùy chọn `dọcker run --link`, nhưng điều này không được khuyến khích.
+Các container kết nối default `bridge` network có thể giao tiếp với nhau bằng địa chỉ IP. Docker không hỗ trợ tìm service tự động trên default `bridge` network. Nếu bạn muốn các container có thể phân giải địa chỉ IP theo tên container, bạn nên sử dụng user-defined networks.
 
 Bạn có thể `attach` vào một `container` đang chạy để xem network trông như thế nào từ bên trong container.
 
@@ -51,12 +51,12 @@ PING 172.17.0.3 (172.17.0.3): 56 data bytes
 round-trip min/avg/max = 0.074/0.083/0.096 ms
 ```
 
-Default `docker0` bridge network hỗ trợ việc sử dụng ánh xạ cổng và `docker run --link` cho phép các container giao tiếp với nhau trong mạng `docker0`. Cách tiếp cận này không được khuyến cáo. Nếu có thể, bạn nên sử dụng  user-defined bridge networks.
+Default `docker0` bridge network hỗ trợ việc sử dụng ánh xạ cổng và `docker run --link` cho phép các container giao tiếp với nhau trong mạng `docker0`. Cách tiếp cận này không được khuyến khích sử dụng. Nếu có thể, bạn nên sử dụng  user-defined bridge networks.
 
 ## User-defined networks
 Khuyến khích sử dụng user-defined bridge networks để kiểm soát những container nào có thể giao tiếp với nhau, và cũng để kích hoạt tính năng phân giải DNS tự động tên container ra địa chỉ IP. Docker cung cấp default **network drivers** để tạo các network này.
 
-Bạn có thể tạo nhiều network tùy theo nhu cầu của mình, và một container có thể không có kết nối hoặc kết nối đến nhiều mạng vào bất kỳ thời điểm nào. Ngoài ra, bạn có thể kết nối và ngắt kết nối các container đang chạy từ mạng mà không phải khời động lại container.
+Bạn có thể tạo nhiều network tùy theo nhu cầu của mình, và một container có thể không có kết nối hoặc kết nối đến nhiều mạng vào bất kỳ thời điểm nào. Ngoài ra, bạn có thể kết nối và ngắt kết nối các container đang chạy từ mạng mà không phải khởi động lại container.
 
 Các phần sau mô tả các driver tích hợp sẵn của Docker một cách chi tiết hơn.
 
@@ -172,7 +172,7 @@ Docker daemon chạy một embedded DNS server cung cấp phân giải DNS giữ
 
 ## Exposing and publishing ports
 Trong mạng Docker, có 2 cơ chế liên quan đến các cổng mạng: exposing và publishing ports. Nó áp dụng cho default bridge network và user-defined bridge networks.  
-- Bạn expose ports bằng cách sử dụng từ khóa `EXPOSE` trong Dockerfile hoặc `--expose` trong `dọcker run`. Exposing ports là một cách để ghi lại các cổng đã được sử dụng, nhưng không thực sự ánh xạ hoặc mở bất kỳ cổng nào. Exposing ports là tùy chọn.  
+- Bạn expose ports bằng cách sử dụng từ khóa `EXPOSE` trong Dockerfile hoặc `--expose` trong `docker run`. Exposing ports là một cách để ghi lại các cổng đã được sử dụng, nhưng không thực sự ánh xạ hoặc mở bất kỳ cổng nào. Exposing ports là tùy chọn.  
 - Bạn publish ports bằng cách sử dụng từ khóa `PUBLISH` trong Dockerfile hoặc `--publish` trong `docker run`. Điều này cho Docker biết cổng nào mở trên giao diện mạng của container. Khi một cổng được publish, nó được ánh xạ đến một cổng cao (cao hơn 30000) trên máy chủ, trừ khi bạn chỉ định cổng để ánh xạ đến máy chủ khi chạy. Bạn không thể chỉ định cổng để ánh xạ tới máy chủ trong Dockerfile, vì không có gì đảm bảo cổng đó sẽ có sẵn trên máy chủ nơi bạn chạy image.
 
 Ví dụ sau publishes cổng 80 trong container đến một cổng ngẫu nhiên cao hơn trên máy chủ.
