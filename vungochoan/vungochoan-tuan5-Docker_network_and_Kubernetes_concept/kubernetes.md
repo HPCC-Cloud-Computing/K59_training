@@ -19,7 +19,7 @@ Kubernetes Objects là các thực thể trong hệ thống Kubernetes. Kubernet
 Để làm việc với các Kubernetes Objects, như thêm, sửa hoặc xóa chúng - bạn cần phải sử dụng API Kubernetes.
 
 #### 2.1.1 Object Spec và Status
-Mỗi Kubernetes object bao gồm 2 trường đối tượng lồng nhau quản lý cấu hình của đối tượng: object spec và object status. Spec, cái bạn phải cung cấp, mô tả trạng thái mong muốn của bạn cho đối tượng-các đặc tính mà bạn muốn các đối tượng có. Status mô tả các trạng thái thực tế của các đối tượng, và được cung cấp và cập nhật bởi hệ thống Kubernetes.
+Mỗi Kubernetes object bao gồm 2 trường đối tượng lồng nhau quản lý cấu hình của đối tượng: object spec và object status. Spec mô tả trạng thái mong muốn của bạn cho đối tượng - các đặc tính mà bạn muốn các đối tượng có. Status mô tả các trạng thái thực tế của các đối tượng, và được cung cấp và cập nhật bởi hệ thống Kubernetes.
 
 #### 2.1.2 Mô tả một Kubernetes object
 Khi tạo một đối tượng trong Kubernetes, bạn phải cung cấp cho object spec trạng thái mong muốn của nó và một số thông tin cơ bản. Khi bạn sử dụng API Kubernetes để tạo đối tượng (trực tiếp hoặc thông qua `kubectl`), yêu cầu API đó phải bao gồm thông tin là JSON. Thông thường, bạn cung cấp thông tin đến `kubectl` trong tệp **.yaml**
@@ -29,9 +29,78 @@ Trong tệp tin **.yaml** của Kubernetes object bạn muốn tạo, bạn cầ
 - `apiVersion` - Phiên bản API Kubernetes nào bạn đang sử dụng để tạo ra đối tượng này
 - `kind` - Bạn muốn tạo loại đối tượng nào
 - `metadata` - dữ liệu giúp xác định đối tượng là duy nhất, bao gồm name string, UID và tùy chọn namespace.
-Bạn cũng cần cung cấp trường object spec. Định dạng đúng của object spec là khác nhau cho mọi Kubernetes object, và chứa các trường lồng nhau riêng của đối tượng đó.
 
-# II. Container
+Bạn cũng cần cung cấp trường object spec. Định dạng đúng của object spec là khác nhau cho mỗi Kubernetes object, và chứa các trường lồng nhau riêng của đối tượng đó.
+
+### 2.2 Name
+Tất cả các đối tượng trong Kubernetes REST API được xác định rõ ràng bởi một tên và một UID. Đối với các thuộc tính non-unique user-provided, Kubernetes cung cấp label và chú thích.
+
+#### Name
+Tên thường được cung cấp bởi khách hàng. Chỉ có một đối tượng của một loại nhất định có thể có một tên được đặt tại một thời điểm. Nhưng nếu bạn xóa một đối tượng, bạn có thể tạo ra một đối tượng mới có cùng tên. Tên được sử dụng trong một tài nguyên URL.
+
+#### UIDs
+UID được tạo ra bởi Kubernetes. Mỗi đối tượng được tạo ra trong toàn bộ vòng đời của một Kubernetes cluster có một UID riêng biệt
+
+### 2.3 Namespace
+Kubernetes hỗ trợ nhiều virtual clusters bởi cùng một physical cluster. Các virtual clusters này được gọi là namespace.
+
+Namespace được sử dụng trong môi trường với nhiều người dùng trải rộng trên nhiều nhóm hoặc nhiều project. Namespace cung cấp phạm vi cho tên. Tên của tài nguyên cần phải là duy nhất trong một namespace.
+
+Namespace là một cách phân chia các tài nguyên của cluster giữa nhiều lần sử dụng (thông qua resource quota).
+
+# II. Kubernetes Architecture
+## Nodes
+### Định nghĩa
+Một node là một worker machine trong Kubernetes. Một node có thể là một máy ảo hoặc máy vật lý, tùy thuộc vào cluster. Mỗi node có các dịch vụ cần thiết để chạy các pod và được quản lý bởi master conponent. Các dịch vụ trên một node bao gồm Docker, kubelet và kube-proxy.
+
+### Trạng thái node
+Trạng thái node chứa các thông tin sau:
+- Addresses
+- Phase
+- Condition
+- Capacity
+- Info
+
+#### Addresses
+Việc sử dụng các trường này tùy thuộc vào nhà cung cấp cloud của bạn hoặc bare metal configuration.
+- HostName: Tên máy chủ lưu trữ được báo cáo bởi nhân của node. Có thể được ghi đè bằng tham số **`--hostname-override`**.
+- ExternalIP: Thông thường địa chỉ IP của node có thể được định tuyến bên ngoài (có sẵn từ bên ngoài cluster).
+- InternalIP: Thông thường địa chỉ IP của node chỉ có thể định tuyến trong cluster.
+
+#### Phase
+Node phase không còn được sử dụng.
+
+#### Condition
+Trường Condition mô tả trạng thái của tất cả các node đang chạy
+| Node Condition | Description |
+| ------ | ------ |
+| OutOfDisk | **True** nếu không có đủ không gian trống trên node để thêm các pod mới, ngược lại là **False**|
+| Ready | **True** nếu node đó khỏe mạnh và sẵn sàng chấp nhận pod, **False** nếu node không khỏe mạnh và không chấp nhận pod, **Unknown** nếu node controller không nghe thấy từ node trong 40 giây cuối|
+| MemoryPressure | **True** nếu node không có sức ép bộ nhớ, ngược lại là **False**|
+| DiskPressure | **True** nếu không có sức ép disk, ngược lại là **False** |
+
+#### Capacity
+Mô tả các tài nguyên sẵn có trên node: CPU, bộ nhớ và số lượng tối đa các pod có thể được lên kế hoạch trên node.
+
+#### Info
+Thông tin chung về node, chẳng hạn như phiên bản kernel, phiên bản Kubernetes (phiên bản kubelet và kube-proxy), phiên bản Docker (nếu được sử dụng), tên hệ điều hành. Info được thu thập bởi Kubelet từ node.
+
+### Management
+Không giống như pod và các service, một node vốn không phải được tạo ra bởi Kubernetes: nó được tạo ra từ bên ngoài bởi các nhà cung cấp cloud, hoặc tồn tại trong pool của máy vật lý hay máy ảo. Khi Kubernetes tạo ra một node, nó chỉ là tạo ra một đối tượng đại diện cho node. Sau khi tạo, Kubernetes sẽ kiểm tra xem node có hợp lệ hay không.
+
+#### Node Controller
+Node Controller là một Kubernetes master component quản lý các khía cạnh khác nhau của các node.
+
+Đầu tiên là gán một khối CIDR cho node khi nó được đăng ký (nếu CIDR được bật).
+
+Thứ hai là duy trì danh sách bên trong node controller của node cập nhật với danh sách các máy có sẵn của nhà cung cấp cloud.
+
+Thứ ba là theo dõi tình trạng của các node.
+
+#### Node capacity
+Dung lượng của node (số lượng CPU và dung lượng bộ nhớ) là một phần của đối tượng node. Thông thường, các node tự đăng ký và báo cáo dung lượng của chúng khi tạo đối tượng node. Nếu quản lý node thủ công thì bạn cần thiết lập dung lượng node khi thêm một node.
+
+# III. Containers
 ## 1. Images
 Bạn tạo image Docker của bạn và push nó vào một đăng ký trước khi đề cập đến nó trong Kubernetes pod.
 
@@ -41,18 +110,18 @@ Tính chất **image** của một container hỗ trợ cú pháp giống như l
 Kubernetes sẽ không pull một image nếu nó đã tồn tại. Nếu bạn không chỉ định tag của image, nó sẽ được gỉa sử là **`:latest`**. Lưu ý rằng bạn nên tránh sử dụng **`:latest`** tag.
 
 ## 2. Biến môi trường container
-### 2.1. Môi trường container
+### Môi trường container
 Môi trường container Kubernetes cung cấp một số tài nguyên quan trọng cho container:
 - Một hệ thống tệp tin, là sự kết hợp của một image và một hoặc nhiều volumes.
 - Thông tin về chính container
 - Thông tin về các đối tượng khác trong cluster.
 
-#### 2.1.1. Thông tin container
+#### Thông tin container
 Tên máy chủ của một container là tên của Pod trong đó container đang chạy. Nó có sẵn thông qua lệnh **hostname** hay gọi hàm `gethostname` trong libc.
 
 Tên Pod và không gian tên có sẵn dưới dạng các biến môi trường thông qua **downward API**.
 
-#### 2.1.2. Thông tin cluster
+#### Thông tin cluster
 Một danh sách tất cả các dịch vụ đang chạy khi một container được tạo ra có sẵn cho container đó như các biến môi trường. Những biến môi trường phù hợp với cú pháp của liên kết Docker.
 
 ## 3. Container Lifecycle Hooks
@@ -69,7 +138,7 @@ Hook này thực hiện ngay sau khi một container được tạo ra. Tuy nhi�
 
 Hook này được gọi ngay trước khi container được kết thúc. Đó là chặn, có nghĩa là nó đồng bộ, do đó nó phải hoàn thành trước khi lời gọi xóa các container có thể được gửi. Không có tham số nào được truyền cho trình xử lý.
 
-# III. Workloads
+# IV. Workloads
 ## 1. Pods
 ### 1.1 Tổng quan về Pod
 Pod là khối xây dựng cơ bản của Kubernetes - đơn vị nhỏ nhất và đơn giản nhất trong mô hình đối tượng Kubernetes mà bạn tạo ra hoặc triển khai. Một Pod đại diện cho một tiến trình đang chạy trên cluster của bạn.
@@ -94,8 +163,8 @@ Các giá trị có thể có cho `phase`
 Một Pod có thể có nhiều Container chạy các ứng dụng bên trong nó, nhưng nó cũng có thể có một hoặc nhiều Init Container, được chạy trước khi Containers ứng dụng được chạy.
 
 Init container giống với container thông thường, ngoại trừ:
-- Chúng luôn chạy đến khi hoàn thành
-- Mỗi cái phải hoàn thành thành công trước khi cái tiếp theo được bắt đầu
+- Chúng luôn chạy đến khi kết thúc
+- Mỗi cái phải kết thúc thành công trước khi cái tiếp theo được bắt đầu
 
 Nếu một Init Container chạy thất bại, Kubernetes khởi động lại Pod một lần nữa cho đến khi Init Container thành công.
 
@@ -104,16 +173,16 @@ Nếu một Init Container chạy thất bại, Kubernetes khởi động lại 
 ReplicaSet là thế hệ kế tiếp của Replication Controller. Sự khác biệt duy nhất giữa ReplicaSet và Replication Controller là sự lựa chọn hỗ trợ. 
 
 ### 2.2. Replication Controller
-Một Replication Controller đảm bảo rằng một pod hay bộ đồng nhất của pod luôn sẵn sàng và sẵn có. Nếu có quá nhiều pod, nó sẽ xóa đi một ít, nếu có quá ít, nó sẽ khởi động nhiều hơn. Không giống như các pod được tạo thủ công, các pod được duy trì bởi một ReplicationController sẽ tự động được thay thế nêú chúng bị lỗi, bị xóa hoặc bị kết thúc.
+Một Replication Controller đảm bảo rằng một pod hay bộ đồng nhất của pod luôn sẵn sàng và sẵn có. Nếu có quá nhiều pod, nó sẽ xóa bớt đi, nếu có quá ít, nó sẽ khởi động nhiều hơn. Không giống như các pod được tạo thủ công, các pod được duy trì bởi một ReplicationController sẽ tự động được thay thế nếu chúng bị lỗi, bị xóa hoặc bị kết thúc.
 
 ### 2.3. Deployment
 Deployment cung cấp thông tin cập nhật cho Pods và ReplicaSets. Bạn chỉ cần mô tả trạng thái mong muốn trong một đối tượng Deployment, và bộ điều khiển Deployment sẽ thay đổi trạng thái thực tế sang trạng thái mong muốn với tỷ lệ được kiểm soát cho bạn.
 
 Ngoài ra còn nhiều thành phần khác nữa của Controller như: StatefulSets, PetSets, Daemon Sets,...
 
-# IV. Storage
+# V. Storage
 ## 1. Volumes
-Các tệp trên ổ đĩa trong một container là tạm thời, trong đó nói về một số vấn đề đối với các ứng dụng không tầm thường khi chạy trong các container. Thứ nhất, khi một containerontainer bị treo, kubelet sẽ khởi động lại nó, nhưng các tệp tin sẽ bị mất, container sẽ bắt đầu lại với trạng thái trống. Thứ hai, khi chạy các container với nhau trong một pod thường cần phải chia sẻ các tệp tin giữa các container. Volume Kubernetes sẽ giải quyết cả hai vấn đề này.
+Các tệp trên ổ đĩa trong một container là tạm thời, trong đó nói về một số vấn đề đối với các ứng dụng non-trivial khi chạy trong các container. Thứ nhất, khi một container bị treo, kubelet sẽ khởi động lại nó, nhưng các tệp tin sẽ bị mất, container sẽ bắt đầu lại với trạng thái trống. Thứ hai, khi chạy các container với nhau trong một pod thường cần phải chia sẻ các tệp tin giữa các container. Volume Kubernetes sẽ giải quyết cả hai vấn đề này.
 
 Kubernetes hỗ trợ một số loại Volumes:
 - emptyDir: được tạo ra lần đầu tiên khi một Pod được gán cho một node, và tồn tại miễn là Pod đang chạy trên node đó. Khi một Pod được gỡ bỏ từ một node vì bất kỳ lý do gì, dữ liệu trong nó sẽ bị xóa mãi mãi.
