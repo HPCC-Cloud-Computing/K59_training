@@ -452,15 +452,6 @@ Deployment cung cấp thông tin cập nhật cho Pods và ReplicaSets. Bạn ch
 
 Bạn có thể định nghĩa các Deployment để tạo mới ReplicaSets, hoặc gỡ bỏ Deployments hiện tại và sử dụng tất cả các tài nguyên của nó cho Deployments mới.
 
-Một trường hợp sử dụng điển hình là:
-- Tạo Deployment để triển khai ReplicaSet: ReplicaSet tạo Pods trong background. Kiểm tra trạng thái của bản giới thiệu để xem nó có thành công hay không.
-- Sau đó, khai báo trạng thái mới của Pod bạn muốn chạy bằng cách cập nhật PodTemplateSpec của Deployment. Một ReplicaSet mới được tạo ra và Deployment quản lý di chuyển các Pod từ ReplicaSet cũ sang ReplicaSet mới trong một controlled rate. Mỗi ReplicaSet mới được tạo, cập nhật bản sửa đổi của Deployment.
-- Khôi phục bản sửa đổi Deployment trước đó nếu trạng thái hiện tại của Deployment không ổn định. Mỗi lần khôi phục cập nhật bản sửa đổi của Deployment.
-- Tăng scale Deployment để tạo nhiều tải hơn.
-- Tạm dừng Deployment để áp dụng nhiều bản sửa lỗi PodTemplateSpec của nó rồi tiếp tục để bắt đầu Deployment mới.
-- Sử dụng trạng thái của Deployment như một chỉ thị mà một rollout đã bị kẹt.
-- Dọn dẹp ReplicaSets cũ mà bạn không cần nữa.
-
 #### Tạo Deployment
 Ví dụ:
 ```
@@ -488,7 +479,139 @@ $ kubectl create -f docs/user-guide/nginx-deployment.yaml --record
 deployment "nginx-deployment" created
 ```
 
-Ngoài ra còn nhiều thành phần khác nữa của Controller như: StatefulSets, PetSets, Daemon Sets,...
+### 2.4 StatefulSets
+StatefulSets là một Controller cung cấp định dạng duy nhất cho Pods của nó. Nó cung cấp bảo đảm về thứ tự deployment và scaling.
+
+#### Sử dụng StatefulSets
+StatefulSets đáp ứng yêu cầu của application:
+- Stable, xác định mạng duy nhất
+- Stable, lưu trữ liên tục
+- Ordered, graceful deployment và scale
+- Ordered, graceful deletion và termination.
+
+Stabe đồng nghĩa với sự kiên trì trong việc lập lịch Pod (lại).
+
+#### Các thành phần
+Ví dụ dưới đây thể hiện các thành phần của StatefulSet
+- Một Headless Service tên là nginx, được sử dụng để kiểm soát miền mạng.
+- StatefulSet tên là web, Spec chỉ ra rằng có 3 replicas của các container nginx.
+- VolumeClaimTemplates cung cấp stable storage bằng cách sử dụng PersistentVolumes được cung cấp bởi một PersistentVolume Provisioner.
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None
+  selector:
+    app: nginx
+---
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  serviceName: "nginx"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nginx
+        image: gcr.io/google_containers/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+      annotations:
+        volume.beta.kubernetes.io/storage-class: anything
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+```
+
+### 2.5 DaemonSet
+DaemonSet đảm bảo tất cả (hoặc một số) node chạy một bản sao của một pod. Khi một node được thêm vào cluster, các pod sẽ được thêm vào. Xóa một DaemonSet sẽ xóa các Pod do nó tạo ra.
+
+Một số sử dụng điển hình của DaemonSet:
+- Chạy một daemon lưu trữ cluster, chẳng hạn như **`glusterd`**, **`ceph`** trên mỗi node.
+- Chạy một logs collection daemon trên mỗi node, chẳng hạn như **`fluentd`** hoặc **`logstash`**
+- Chạy một node monitoring daemon trên mỗi node
+
+### 2.6 PetSet
+Mục tiêu của PetSet là tách riêng sự phụ thuộc bằng cách gán các đặc điểm nhận dạng cho các thể hiện riêng biệt của một ứng dụng không bị gắn kết với cơ sở hạ tầng vật chất bên dưới.
+
+**Mối quan hệ giữa Pets và Pods**: PetSet yêu cầu có {0...N-1} Pets. Mỗi Pet có một tên xác định - PetSetName-Ordinal và một định danh duy nhất. Mỗi Pet có nhiều nhất một Pod, và mỗi PetSet có tối đa một Pet với một định danh nhất định.
+
+#### Ví dụ về PetSet
+```
+# A headless service to create DNS records
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: web
+  # *.nginx.default.svc.cluster.local
+  clusterIP: None
+  selector:
+    app: nginx
+---
+apiVersion: apps/v1alpha1
+kind: PetSet
+metadata:
+  name: web
+spec:
+  serviceName: "nginx"
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx
+      annotations:
+        pod.alpha.kubernetes.io/initialized: "true"
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+      - name: nginx
+        image: gcr.io/google_containers/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+      annotations:
+        volume.alpha.kubernetes.io/storage-class: anything
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+```
 
 # V. Configuration
 ## 1. Configuration Best Practices
