@@ -1,0 +1,1 @@
+exec:command:onewiretemp [command="bash /opt/openhab/conf/scripts/onewiretemp.sh"]

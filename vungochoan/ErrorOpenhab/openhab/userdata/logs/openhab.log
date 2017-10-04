@@ -1,0 +1,495 @@
+2017-10-04 17:52:28.700 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at http://172.17.0.2:8080
+2017-10-04 17:52:28.707 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at https://172.17.0.2:8443
+2017-10-04 17:53:19.239 [INFO ] [panel.internal.HABPanelDashboardTile] - Started HABPanel at /habpanel
+2017-10-04 17:53:19.343 [INFO ] [basic.internal.servlet.WebAppServlet] - Started Basic UI at /basicui/app
+2017-10-04 17:53:19.366 [INFO ] [arthome.ui.paper.internal.PaperUIApp] - Started Paper UI at /paperui
+2017-10-04 17:55:25.398 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:117)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$UpdateConfiguration.run(ConfigurationManager.java:1772)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 17:55:25.400 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 17:56:25.401 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 1 of 3.
+2017-10-04 17:56:25.402 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$UpdateConfiguration.run(ConfigurationManager.java:1772)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 17:56:25.403 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 17:57:25.404 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 2 of 3.
+2017-10-04 17:57:25.405 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$UpdateConfiguration.run(ConfigurationManager.java:1772)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 17:57:25.407 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 17:58:25.408 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 3 of 3.
+2017-10-04 17:58:25.409 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$UpdateConfiguration.run(ConfigurationManager.java:1772)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 17:58:25.410 [ERROR] [nternal.connection.OneWireConnection] - Couldn't connect to owserver [IP '127.0.0.1' Port '4304']
+2017-10-04 17:58:25.411 [WARN ] [nternal.connection.OneWireConnection] - Connection to owserver failed!
+2017-10-04 17:59:16.689 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at http://172.17.0.2:8080
+2017-10-04 17:59:16.699 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at https://172.17.0.2:8443
+2017-10-04 17:59:16.815 [INFO ] [basic.internal.servlet.WebAppServlet] - Started Basic UI at /basicui/app
+2017-10-04 17:59:16.861 [INFO ] [arthome.ui.paper.internal.PaperUIApp] - Started Paper UI at /paperui
+2017-10-04 17:59:16.891 [INFO ] [panel.internal.HABPanelDashboardTile] - Started HABPanel at /habpanel
+2017-10-04 17:59:16.981 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:117)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 17:59:16.983 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:00:16.984 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 1 of 3.
+2017-10-04 18:00:16.985 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:00:16.987 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:01:16.988 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 2 of 3.
+2017-10-04 18:01:16.989 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:01:16.990 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:02:16.991 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 3 of 3.
+2017-10-04 18:02:16.992 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:02:16.994 [ERROR] [nternal.connection.OneWireConnection] - Couldn't connect to owserver [IP '127.0.0.1' Port '4304']
+2017-10-04 18:02:16.994 [WARN ] [nternal.connection.OneWireConnection] - Connection to owserver failed!
+2017-10-04 18:03:54.448 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at http://172.17.0.2:8080
+2017-10-04 18:03:54.450 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at https://172.17.0.2:8443
+2017-10-04 18:03:54.640 [INFO ] [basic.internal.servlet.WebAppServlet] - Started Basic UI at /basicui/app
+2017-10-04 18:03:54.667 [INFO ] [arthome.ui.paper.internal.PaperUIApp] - Started Paper UI at /paperui
+2017-10-04 18:03:54.695 [INFO ] [panel.internal.HABPanelDashboardTile] - Started HABPanel at /habpanel
+2017-10-04 18:03:54.762 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:117)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:03:54.778 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:04:54.779 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 1 of 3.
+2017-10-04 18:04:54.780 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:04:54.783 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:05:54.784 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 2 of 3.
+2017-10-04 18:05:54.785 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:05:54.787 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:06:13.110 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at http://172.17.0.2:8080
+2017-10-04 18:06:13.113 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at https://172.17.0.2:8443
+2017-10-04 18:06:13.292 [INFO ] [basic.internal.servlet.WebAppServlet] - Started Basic UI at /basicui/app
+2017-10-04 18:06:13.327 [INFO ] [arthome.ui.paper.internal.PaperUIApp] - Started Paper UI at /paperui
+2017-10-04 18:06:13.359 [INFO ] [panel.internal.HABPanelDashboardTile] - Started HABPanel at /habpanel
+2017-10-04 18:06:13.405 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:117)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:06:13.409 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:06:56.996 [INFO ] [core.karaf.internal.FeatureInstaller] - Uninstalled 'openhab-binding-onewire1'
+2017-10-04 18:07:13.410 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 1 of 3.
+2017-10-04 18:07:13.411 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:07:13.416 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:08:13.417 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 2 of 3.
+2017-10-04 18:08:13.418 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[181:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[181:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[181:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:08:13.420 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:08:46.871 [WARN ] [org.apache.felix.fileinstall        ] - A bundle with the same symbolic name (org.openhab.binding.onewire) and version (1.10.0) is already installed.  Updating this bundle instead.
+2017-10-04 18:08:51.163 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at http://172.17.0.2:8080
+2017-10-04 18:08:51.164 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at https://172.17.0.2:8443
+2017-10-04 18:08:51.337 [INFO ] [basic.internal.servlet.WebAppServlet] - Started Basic UI at /basicui/app
+2017-10-04 18:08:51.371 [INFO ] [arthome.ui.paper.internal.PaperUIApp] - Started Paper UI at /paperui
+2017-10-04 18:08:51.423 [INFO ] [panel.internal.HABPanelDashboardTile] - Started HABPanel at /habpanel
+2017-10-04 18:08:51.491 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:117)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[183:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:08:51.499 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:09:51.500 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 1 of 3.
+2017-10-04 18:09:51.501 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[183:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:09:51.503 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:10:51.503 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 2 of 3.
+2017-10-04 18:10:51.504 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[183:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:10:51.505 [WARN ] [nternal.connection.OneWireConnection] - Connection failed. Will retry in 60 seconds.
+2017-10-04 18:11:51.505 [INFO ] [nternal.connection.OneWireConnection] - Retrying failed connection... Attempt 3 of 3.
+2017-10-04 18:11:51.506 [WARN ] [nternal.connection.OneWireConnection] - Unexpected connection failure.
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)[:1.8.0_144]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)[:1.8.0_144]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)[:1.8.0_144]
+	at java.net.Socket.connect(Socket.java:589)[:1.8.0_144]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.tryToSocketConnectionAndStreamsInitialization(OwfsConnectionImpl.java:79)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.connect(OwfsConnectionImpl.java:70)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.establishConnectionIfNeeded(OwfsConnectionImpl.java:113)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.sendRequest(OwfsConnectionImpl.java:204)[183:org.openhab.binding.onewire:1.10.0]
+	at org.owfs.jowfsclient.internal.OwfsConnectionImpl.listDirectory(OwfsConnectionImpl.java:193)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.connect(OneWireConnection.java:142)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.connection.OneWireConnection.updated(OneWireConnection.java:243)[183:org.openhab.binding.onewire:1.10.0]
+	at org.openhab.binding.onewire.internal.OneWireBinding.updated(OneWireBinding.java:106)[183:org.openhab.binding.onewire:1.10.0]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updated(ManagedServiceTracker.java:189)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.updateService(ManagedServiceTracker.java:152)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.helper.ManagedServiceTracker.provideConfiguration(ManagedServiceTracker.java:85)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.provide(ConfigurationManager.java:1461)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.ConfigurationManager$ManagedServiceUpdate.run(ConfigurationManager.java:1417)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run0(UpdateThread.java:141)[3:org.apache.felix.configadmin:1.8.12]
+	at org.apache.felix.cm.impl.UpdateThread.run(UpdateThread.java:109)[3:org.apache.felix.configadmin:1.8.12]
+	at java.lang.Thread.run(Thread.java:748)[:1.8.0_144]
+2017-10-04 18:11:51.508 [ERROR] [nternal.connection.OneWireConnection] - Couldn't connect to owserver [IP '127.0.0.1' Port '4304']
+2017-10-04 18:11:51.509 [WARN ] [nternal.connection.OneWireConnection] - Connection to owserver failed!
+2017-10-04 19:30:06.582 [INFO ] [el.core.internal.ModelRepositoryImpl] - Loading model 'onewire.items'
+2017-10-04 19:30:06.606 [INFO ] [el.core.internal.ModelRepositoryImpl] - Refreshing model 'onewire.items'
+2017-10-04 19:31:08.924 [INFO ] [el.core.internal.ModelRepositoryImpl] - Loading model 'onewire.things'
+2017-10-04 19:31:08.936 [INFO ] [el.core.internal.ModelRepositoryImpl] - Refreshing model 'onewire.things'
+2017-10-04 19:34:11.805 [INFO ] [el.core.internal.ModelRepositoryImpl] - Loading model 'onewire.sitemap'
+2017-10-04 19:34:11.814 [INFO ] [el.core.internal.ModelRepositoryImpl] - Refreshing model 'onewire.sitemap'

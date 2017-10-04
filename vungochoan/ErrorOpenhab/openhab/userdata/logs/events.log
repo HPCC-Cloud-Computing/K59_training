@@ -1,0 +1,8 @@
+2017-10-04 17:53:10.394 [ExtensionEvent            ] - Extension 'package-standard' has been installed.
+2017-10-04 17:53:19.378 [ExtensionEvent            ] - Extension 'ui-basic' has been installed.
+2017-10-04 17:53:19.382 [ExtensionEvent            ] - Extension 'ui-habpanel' has been installed.
+2017-10-04 17:53:19.383 [ExtensionEvent            ] - Extension 'ui-paper' has been installed.
+2017-10-04 17:54:53.177 [ExtensionEvent            ] - Extension 'binding-onewire1' has been installed.
+2017-10-04 18:06:57.011 [ExtensionEvent            ] - Extension 'binding-onewire1' has been uninstalled.
+2017-10-04 18:07:44.163 [ExtensionEvent            ] - Extension 'binding-onewire1' has been installed.
+2017-10-04 19:30:06.621 [ItemChannelLinkAddedEvent ] - Link 'onewiretempValue-exec:command:onewiretemp:output' has been added.

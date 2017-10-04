@@ -1,0 +1,1 @@
+Number onewiretempValue "Temp is [%f °C]" {channel="exec:command:onewiretemp:output"}
