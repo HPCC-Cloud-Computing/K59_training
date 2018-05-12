@@ -60,7 +60,7 @@ class Driver:
         self.clientMQTT.publish('registry/request/api_add_platform', json.dumps(message))
 
         while self.platform_id is None or check_response == 0:
-            print("Wait for platform_id")
+            print("Wait for Registry response")
             self.clientMQTT.loop()
 
         if mode == 'PULL':
@@ -104,7 +104,7 @@ class Driver:
             print("disconnect to Mosquitto.")
 
     def on_connect(self, client, userdata, flags, rc):
-        print("connect to Mosquitto")
+        print("connected to Mosquitto")
         if self.platform_id is not None:
             if self.mode == 'PULL':
                 self.clientMQTT.subscribe(str(self.platform_id) + '/request/api_get_states')
