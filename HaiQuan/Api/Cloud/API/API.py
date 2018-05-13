@@ -4,12 +4,12 @@ import sys
 import socket
 import datetime
 
-MODE_CODE = "DEVELOP"
+#MODE_CODE = "DEVELOP"
 
 # if MODE_CODE == "DEPLOY":
-BROKER_CLOUD = sys.argv[1]
+# BROKER_CLOUD = sys.argv[1]
 # else:
-# BROKER_CLOUD="localhost"
+BROKER_CLOUD="localhost"
 
 
 rabbitmq_connection = Connection(BROKER_CLOUD)
