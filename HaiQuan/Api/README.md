@@ -21,6 +21,13 @@ Chạy hệ thống lần lượt theo thứ tự: Forwarder_Cloud_to_Fog, Forwa
 
 ## Chạy hệ thống bằng Docker
 
+Export các biến môi trường: 
+	export BROKER_CLOUD= địa chỉ rabbitmq
+	export BROKER_FOG= địa chỉ mosquitto
+	export HOST_MYSQL= địa chỉ mysql
+	export HOST_INFLUXDB= địa chỉ influxdbM
+	export MODE= có thể là PULL hoặc PUSH, 
+
 Sử dụng các file để chạy hệ thống: 
 
 - `script/start_system_cloud.sh`: để chạy hệ thống tầng Cloud
