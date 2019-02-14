@@ -1,0 +1,6 @@
+sitemap onewire label="Main Menu"
+{
+	Frame label="Temperature" {
+		Text item=onewiretempValue
+	}
+}
